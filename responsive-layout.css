@@ -1,0 +1,134 @@
+body{
+    box-sizing: border-box;
+    border: 1px solid black;
+    margin:0 10px
+}
+
+.main-nav{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+
+.main-nav a{
+
+    text-align: center;
+    height:auto;
+    margin:5px;
+    padding:10px;
+    width:100%;
+}
+
+h2{
+    text-align: center;
+}
+.main-content{
+    margin:10px;
+    padding:20px;
+    border: 1px solid lightcyan;
+    
+    
+}
+aside{
+    border:1px solid black;
+    background-color: forestgreen;
+    color: white;
+}
+
+.content-container{
+    display: grid;
+}
+
+.main-content{grid-area: article;}
+aside{grid-area:sidebar}
+
+footer{
+    display:flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    text-align: center;
+}
+footer div{
+    border: 1px solid black;
+    padding:10px;
+    margin:5px;
+}
+@media screen and (min-width:320px) and (max-width:768px){
+ 
+    .main-content{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "article"
+            "sidebar"
+        ;
+    }
+}
+
+
+@media screen and (max-width:768px){
+
+    .content-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "article"
+            "sidebar"
+        ;
+    }
+}
+
+@media screen and (min-width:768px)  and (max-width:960px){
+
+    .main-nav{
+        flex-direction: row;
+    }
+    .content-container{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+                "article sidebar"
+        
+        ;
+    }
+    aside{
+
+        width:80%;
+        margin-top: 150px;
+        padding: 20px;
+        height:200px;
+    }
+    footer{
+        flex-direction: row;
+        justify-content: space-between;
+     }
+    }
+  
+@media screen and (min-width:960px) {
+        .main-nav{
+            flex-direction: row;
+        }
+        .content-container{
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            grid-template-areas: 
+                    "article sidebar"
+            
+            ;
+        }
+        aside{
+
+            width:80%;
+            margin-top: 150px;
+            padding: 20px;
+            height:200px;
+        }
+
+        footer{
+           flex-direction: row;
+           justify-content: space-between;
+        }
+        }
+      
